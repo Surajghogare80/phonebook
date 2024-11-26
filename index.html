@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        .heading {
+            font-size: 25px;
+
+        }
+
+        .contact {
+            font-size: 25px;
+        }
+
+        #search {
+            margin-left: 30px;
+            font-size: 20px;
+            padding: 10px;
+            border: none;
+            border-bottom: 1px solid;
+            text-align: center;
+            margin-right: 15px;
+            width: 300px;
+            margin: 20px;
+            
+
+        }
+
+        .name-list {
+
+            border-radius: 20px;
+            margin: 20px 0px;
+            width: 500px;
+            text-align: center;
+            font-size: 20px;
+            border: none solid rgba(137, 133, 133, 0.5);
+            padding: 5px;
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .head {
+            margin: 20px;
+            margin-bottom: 10px;
+            margin-left: 40px;
+        }
+
+        #result {
+            border: none;
+            border-radius: 15px;
+            padding: 20px;
+            background-color: rgb(205, 188, 188);
+            width:400px;
+            border:none;
+            margin: 30px;
+            text-align: center;
+
+        }
+
+        .btn {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            background-color: gray;
+            margin: 15px;
+            width: 100px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .btn1 {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            background-color: gray;
+            width: 80px;
+        }
+
+        .contact-list {
+            background-color: rgb(187, 187, 181);
+            width: 30%;
+            border-radius: 20px;
+            align-items: center;
+            text-align: center;
+
+        }
+        .list{
+            display: flex;
+            flex-direction: column;
+
+
+        }
+        .name{
+            margin: 10px;
+            background-color: rgb(241, 244, 244);
+            border: none solid gray;
+            border-radius: 15px;
+            width: 140px;
+            padding: 10px;
+
+        }
+        .icon{
+            font-size: 30px;
+            margin-right:5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head ">
+         <i class="fa-regular fa-address-book icon"></i>
+        <b class="fa-solid fa-contact contact">Contact</b>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+        <input type="text" placeholder="Search here" id="search">
+        <button type="button" class="btn" onclick="search()">Search</button>
+
+    </div>
+    <p id="result" placeholder="result" class="fa-solid"></p>
+
+    <div class="list">
+        <span class="name-1">
+           <h1> Contact list</h1>
+            <br>
+           <span class="name fa-solid fa-phone"> Suraj </span> <br>
+           <span class="name fa-solid fa-phone"> Yash </span> <br>
+           <span class="name fa-solid fa-phone"> Sanket </span> <br>
+           <span class="name fa-solid fa-phone"> Yashraj </span> <br>
+           <span class="name fa-solid fa-phone"> Ashu </span> <br>
+           <span class="name fa-solid fa-phone"> Abhi </span> <br>
+           <span class="name fa-solid fa-phone"> Rohit </span> <br>
+           <span class="name fa-solid fa-phone"> Sujal </span> <br>
+           <span class="name fa-solid fa-phone"> Sanket </span> <br>
+           <span class="name fa-solid fa-phone"> Sachin </span> <br>
+
+            
+        </span>
+    
+
+    </div>
+
+   
+    <script src="https://kit.fontawesome.com/7b6884abf8.js" crossorigin="anonymous"></script>
+
+    <script>
+
+        const contacts = {
+            suraj: '9078689569',
+            yash: '7687980796',
+            sanket: '8756986798',
+            yashraj: '7698678907',
+            ashu: '7898098976',
+            abhi: '6798098798',
+            rohit: '9809780978',
+            sujal: '7809890978'
+        }
+
+        function search() {
+            const search = document.getElementById('search');
+            const query = search.value.toLowerCase();
+            const mobile = contacts[query]
+
+            const result = document.getElementById('result')
+            if (mobile) {
+                result.innerText = ` ${query} :- ${mobile}`
+            }
+            else {
+                result.innerText = `Cannot found`
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
